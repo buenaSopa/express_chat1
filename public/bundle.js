@@ -10,7 +10,10 @@ window.onload = () => {
     var form = document.getElementById("message-form")
     var messageField = document.getElementById("message")
 
-    var ws = new WebSocket("ws://localhost:8080")
+    var HOST = location.origin.replace(/^http/, 'ws')
+    var ws = new WebSocket(HOST);
+
+    //var ws = new WebSocket("wss://express-chat1-bryan.herokuapp.com/"+process.env.PORT)
 
     function formatAMPM(date) {
         var hours = date.getHours();
@@ -61,13 +64,6 @@ window.onload = () => {
             </div>`
     
         window.scrollTo(0, document.body.scrollHeight)
-
-        // if (data.msg === undefined) {
-        //     null
-        // } else {
-        
-            
-        // }
     }
 
 }

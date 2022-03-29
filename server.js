@@ -1,6 +1,6 @@
 //const WebSocket =  require("ws")
 
-//npm run devStart
+//npm run compile, devStart
 
 const express = require("express")
 const http = require("http")
@@ -31,6 +31,7 @@ wss.getUniqueColor = () => {
 
 //connection
 wss.on('connection', ws => {
+    console.log("New user connected")
     //assign id and color 
     ws.id = wss.getUniqueID()
     ws.color = wss.getUniqueColor()
