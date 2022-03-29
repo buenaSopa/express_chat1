@@ -9,7 +9,7 @@ window.onload = () => {
     var form = document.getElementById("message-form")
     var messageField = document.getElementById("message")
 
-    var ws = new WebSocket("https://express-chat1-bryan.herokuapp.com/")
+    var ws = new WebSocket("https://express-chat1-bryan.herokuapp.com/"+process.env.PORT)
 
     function formatAMPM(date) {
         var hours = date.getHours();
